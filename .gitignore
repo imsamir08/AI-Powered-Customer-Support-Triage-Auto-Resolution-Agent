@@ -6,11 +6,9 @@ out/
 *.jar
 *.war
 *.ear
+
 node_modules/
 dist/
-dist-ssr/
-*.local
-*.log
 
 *.env
 *.env.*
@@ -29,6 +27,7 @@ application-dev.yml
 .project
 bin/
 .vscode/
+
 .DS_Store
 Thumbs.db
 

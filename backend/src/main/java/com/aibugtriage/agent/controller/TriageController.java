@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/triage")
+@CrossOrigin(origins = "http://localhost:5173")
 public class TriageController {
 
     private final TriageService triageService;

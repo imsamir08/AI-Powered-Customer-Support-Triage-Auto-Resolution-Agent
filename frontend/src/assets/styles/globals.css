@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+:root {
+  --canvas: #070a10;
+  --surface: #0f172a;
+  --surface-alt: #1e293b;
+  --border: rgba(51, 65, 85, 0.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+}
+
+:root[data-theme='light'] {
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+}
+
+:root[data-theme='dark'] {
+  --canvas: #070a10;
+  --surface: #0f172a;
+  --surface-alt: #1e293b;
+  --border: rgba(51, 65, 85, 0.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+}
+
+html {
+  background-color: var(--canvas);
+  color: var(--text-primary);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.11), transparent 30%),
+    var(--canvas);
+  color: var(--text-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.25);
+}
+
+:root[data-theme='light'] [class*='bg-slate-'] {
+  background-color: var(--surface) !important;
+}
+
+:root[data-theme='light'] [class*='border-slate-'] {
+  border-color: var(--border) !important;
+}
+
+:root[data-theme='light'] [class*='text-slate-'] {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme='light'] [class*='placeholder:text-slate-'] {
+  color: var(--text-muted) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+.content-scroll {
+  min-width: 0;
+  min-height: 0;
+  max-height: min(32rem, 70vh);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.content-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}

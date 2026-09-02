@@ -7,15 +7,16 @@ import lombok.Data;
 
 @Data
 public class RegisterRequest {
-    @NotBlank
-    private String username;
+    private String username; // Optional from frontend; fallback to email in controller
 
-    @NotBlank
-    @Email
+    private String name;     // Added to capture name sent by client.ts
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Password is required")
     private String password;
 
-    private Role role; // Optional: defaults to ROLE_USER if null
+    private Role role;
 }

@@ -1,6 +1,3 @@
-# ==========================================
-# Build Outputs & Compiled Files
-# ==========================================
 target/
 build/
 .gradle/
@@ -9,43 +6,32 @@ out/
 *.jar
 *.war
 *.ear
+node_modules/
+dist/
+dist-ssr/
+*.local
+*.log
 
-# ==========================================
-# Environment Variables & Secrets
-# ==========================================
-# CRITICAL: Keep your database passwords, JWT secrets, and API keys safe!
 *.env
+*.env.*
 .env
 application-local.properties
 application-local.yml
 application-dev.properties
 application-dev.yml
 
-# ==========================================
-# IDE & System Files
-# ==========================================
-# IntelliJ IDEA
 .idea/
 *.iml
 *.iws
 *.ipr
-
-# Eclipse
 .settings/
 .classpath
 .project
 bin/
-
-# VS Code
 .vscode/
-
-# macOS / OS Files
 .DS_Store
 Thumbs.db
 
-# ==========================================
-# Logs & Database Files
-# ==========================================
 *.log
 logs/
 *.sqlite

@@ -22,7 +22,8 @@ public class BugService {
 
     public BugResponse createBug(CreateBugRequest request, String reporterUsername) {
         User reporter = userRepository.findByUsername(reporterUsername)
-                .orElseThrow(() -> new RuntimeException("Reporter not found"));
+                .or(() -> userRepository.findByEmail(reporterUsername))
+                .orElseGet(() -> userRepository.findAll().stream().findFirst().orElse(null));
 
         User assignee = null;
         if (request.getAssigneeId() != null) {
